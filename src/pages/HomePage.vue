@@ -1,13 +1,28 @@
-<script setup >
-import Example from '@/components/Example.vue';
+<script setup>
+import { artsService } from '@/services/ArtsService.js';
+import { logger } from '@/utils/Logger.js';
+import { Pop } from '@/utils/Pop.js';
+import { onMounted } from 'vue';
 
+onMounted(() => {
+  getArts()
+})
+
+async function getArts() {
+  try {
+    logger.log('getting art')
+    await artsService.getArts()
+  }
+  catch (error) {
+    Pop.error(error)
+
+  }
+}
 
 </script>
 
 <template>
-  <Example />
+  <p></p>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
