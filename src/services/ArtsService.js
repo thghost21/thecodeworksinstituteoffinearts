@@ -4,8 +4,8 @@ import { Artwork } from "@/models/Artwork.js"
 import { AppState } from "@/AppState.js"
 
 class ArtsService {
-  admireArt(artworkId) {
-    throw new Error('Method not implemented.')
+  async admireArt(artworkId) {
+    const response = await api.post(`api/artworks/:${artworkId}`)
   }
   async getArtworks() {
     const response = await api.get('api/artworks')

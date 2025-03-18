@@ -23,9 +23,11 @@ async function changePage(pageNum) {
 
 <template>
   <div class="d-flex gap-3 align-items-center mt-2">
-    <button @click="changePage(currentPage - 1)" class="btn btn-primary" type="button">Previous</button>
+    <button @click="changePage(currentPage - 1)" class="btn btn-primary" type="button"
+      :disabled="currentPage <= 1">Previous</button>
     <span>Page {{ currentPage }} of {{ totalPages }} </span>
-    <button @click="changePage(currentPage + 1)" class="btn btn-primary" type="button">Next</button>
+    <button @click="changePage(currentPage + 1)" class="btn btn-primary" type="button"
+      :disabled="currentPage == totalPages">Next</button>
   </div>
 </template>
 
