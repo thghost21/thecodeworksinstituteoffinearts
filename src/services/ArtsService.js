@@ -9,6 +9,8 @@ class ArtsService {
     logger.log('got art', response.data)
     const art = response.data.artworks.map(pojo => new Artwork(pojo))
     AppState.artworks = art
+    AppState.totalPages = response.data.page
+    AppState.totalPages = response.data.pages
   }
 }
 

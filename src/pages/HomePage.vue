@@ -1,12 +1,15 @@
 <script setup>
+import { AppState } from '@/AppState.js';
 import { artsService } from '@/services/ArtsService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
 
 onMounted(() => {
   getArts()
 })
+
+const artworks = computed(() => AppState.artworks)
 
 async function getArts() {
   try {
@@ -22,7 +25,7 @@ async function getArts() {
 </script>
 
 <template>
-  <p></p>
+  <p>{{ artworks }}</p>
 </template>
 
 <style scoped lang="scss"></style>
