@@ -5,7 +5,9 @@ import { AppState } from "@/AppState.js"
 
 class ArtsService {
   async admireArt(artworkId) {
-    const response = await api.post(`api/artworks/:${artworkId}`)
+    const response = await api.post(`api/artworks/${artworkId}/admire`)
+    logger.log(response.data)
+
   }
   async getArtworks() {
     const response = await api.get('api/artworks')

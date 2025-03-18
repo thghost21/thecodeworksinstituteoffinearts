@@ -7,5 +7,8 @@ export class Artwork {
     this.attribution = data.attribution
     this.admirers = data.admirers
     this.alt = data.slug
+
   }
+
+
 }

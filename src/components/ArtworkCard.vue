@@ -26,7 +26,8 @@ async function admireArt(artworkId) {
   <div class="bg-dark p-3 my-2 pictureFrame">
     <img :src="artworkProp.img" :alt="artworkProp.alt" class="img-fluid">
     <div>
-      <span @click="admireArt(artworkProp.id)" class="mdi mdi-thumb-up text-light"></span>
+      <span @click="admireArt(artworkProp.id)" type="button" class="mdi mdi-thumb-up text-light"> {{
+        }}</span>
     </div>
   </div>
 
